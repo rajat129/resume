@@ -31,16 +31,16 @@ const Templates = (props) => {
                 <Button color="primary" variant="contained" onClick={() =>{onSelect("skin1")}}>Select</Button>
             </div>
             <div className="a1">
-                <img src={img2} alt="" />
+                <img src={img3} alt="" />
                 <Button color="primary" variant="contained" onClick={() =>{onSelect("skin2")}}>Select</Button>
             </div>
             <div className="a1">
-                <img src={img3} alt="" />
-                <Button color="primary" variant="contained" onClick={() =>{onSelect("skin3")}}>Select</Button>
+                <img src={img2} alt="" />
+                <Button color="primary" variant="contained" >Buy Premium</Button>
             </div>
             <div className="a1">
                 <img src={img4} alt="" />
-                <Button color="primary" variant="contained" onClick={() =>{onSelect("skin4")}}>Select</Button>
+                <Button color="primary" variant="contained" >Buy Premium</Button>
             </div>
         </div>
     </div> );
@@ -52,7 +52,7 @@ function mapStateToProps(store){
 }
 
 function mapDispatchToProps(dispatch){
-    console.log(dispatch);
+    // console.log(dispatch);
     return {
         setSkin : (document) => {dispatch({type : "SET_SKIN" , payload : document})},
         updateSkin: (skin) => {dispatch({type : "UPDATE_SKIN" , payload : skin})}

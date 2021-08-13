@@ -1,0 +1,12 @@
+.exp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.exp h1{
+    text-align: center;
+    margin-top: 20px;
+}

@@ -18,14 +18,14 @@ const Contact = (props) => {
     let classes = useStyle();
 
 
-    let [contact,setContact] = useState(props.contactDetails); 
+    let [contact,setContact] = useState(props.contact); 
 
     const helper = (e) => {
         let key = e.target.name;
         let val = e.target.value;
 
         setContact({...contact , [key] : val});
-        console.log(contact);
+        // console.log(contact);
     }
 
     const getVal = (key) => {
@@ -37,7 +37,7 @@ const Contact = (props) => {
 
     const onToNext = () => {
         props.setContact(contact);
-        console.log("here");
+        // console.log("here");
     }
 
     return (<div className="contact">
@@ -50,7 +50,7 @@ const Contact = (props) => {
                 <TextField className={classes.text} size="small" id="filled-basic" label="Last Name" variant="filled" type="text" name="lastName" onChange={ (e) => {helper(e)}} value={getVal("lastName")}></TextField>
                 <TextField className={classes.text} size="small"  id="filled-basic" label="Phone No" variant="filled" type="number" name="number" onChange={ (e) => {helper(e)}} value={getVal("number")}></TextField>
                 <TextField className={classes.text} size="small" id="filled-basic" label="email" variant="filled" type="email" name="email" onChange={ (e) => {helper(e)}} value={getVal("email")}></TextField>
-                <TextField className={classes.text} size="small" id="filled-basic" label="profession" variant="filled" type="text" name="profession" onChange={ (e) => {helper(e)}} value={getVal("profession")}></TextField>
+                <TextField className={classes.text} size="small" id="filled-basic" label="professional summary" variant="filled" type="text" name="profession" onChange={ (e) => {helper(e)}} value={getVal("profession")}></TextField>
                 <TextField className={classes.text} size="small" id="filled-basic" label="City" variant="filled" type="text" name="city" onChange={ (e) => {helper(e)}} value={getVal("city")}></TextField>
                 <TextField className={classes.text} size="small" id="filled-basic" label="State" variant="filled" type="text" name="state" onChange={ (e) => {helper(e)}} value={getVal("state")}></TextField>
                 <TextField className={classes.text} size="small" id="filled-basic" label="Country" variant="filled" type="text" name="country" onChange={ (e) => {helper(e)}} value={getVal("country")}></TextField>
@@ -59,12 +59,12 @@ const Contact = (props) => {
 
                 <div className="actions">
                     <Link className="btn" to="/education" onClick={() => {onToNext()}}>Next</Link>
-                    <Link className="btn1" to="/template">Back</Link>
+                    <Link className="btn1" to="/template" onClick={() => {onToNext()}}>Back</Link>
                 </div>
             </div>
 
             <div className="right">
-                <Preview contact={contact}></Preview>
+                <Preview contact={contact} education={props.education} experience={props.experience} skin={props.document.skinCode}></Preview>
             </div>
         </div>
        
@@ -72,11 +72,7 @@ const Contact = (props) => {
 }
  
 function mapStateToProps(store){
-    console.log(store);
-    return {
-        contactDetails : store.contact,
-        document : store.document
-    };
+    return store;
 }
 
 function mapDispatchToProps(dispatch){

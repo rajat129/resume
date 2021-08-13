@@ -3,6 +3,7 @@ import { TextField ,makeStyles} from '@material-ui/core';
 import {Link} from "react-router-dom";
 import Preview from './Preview';
 import { connect } from 'react-redux';
+import "../css/education.css";
 
 const Education = (props) => {
 
@@ -34,7 +35,6 @@ const Education = (props) => {
 
     const onToNext = () => {
         props.setEducation(education);
-        props.history.push("/experience");
     }
 
     return ( <div className="education">
@@ -56,12 +56,12 @@ const Education = (props) => {
 
                 <div className="actions">
                     <Link className="btn" to="/experience" onClick={() =>{onToNext()}}>Next</Link>
-                    <Link className="btn1" to="/contact">Back</Link>
+                    <Link className="btn1" to="/contact" onClick={() => {onToNext()}}>Back</Link>
                 </div>
             </div>
 
             <div className="right">
-                <Preview contact={education}></Preview>
+                <Preview education={education} experience={props.experience} contact={props.contact} skin={props.document.skinCode}></Preview>
             </div>
         </div>
     </div> );

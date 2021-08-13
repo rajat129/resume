@@ -1,0 +1,30 @@
+.final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.final .left{
+    margin-right: 50px;
+}
+
+.final .right{
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.download{
+    margin-top: 20px;
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+.back{
+    margin-top: 50px;
+    cursor: pointer;
+}
+

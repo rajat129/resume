@@ -4,6 +4,15 @@ export let initialState = {
         skinCode : undefined
     },
     contactDetails : {
+       
     },
-    educationDetails : {},
+    educationDetails : {
+        
+    },
+    auth : {
+        email : null,
+        pass : null
+    },
+    experience : {
+    },
 }
